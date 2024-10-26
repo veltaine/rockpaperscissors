@@ -18,7 +18,6 @@ if (random < 1 / 3) {
 // console.log(computerChoice);
 
 // Step 3: Write logic to get the player choice
-// let userResult;
 
 function getHumanChoice() {
     let userInput = prompt("Please choose one of the following: 1) rock, 2) paper, 3) scissors");
@@ -33,6 +32,12 @@ function getHumanChoice() {
     }
     return userResult;
 }
+
+// Step 4: Declare the players score variables
+
+let humanScore = 0;
+let computerScore = 0;
+
 
 
 // creating the output results here

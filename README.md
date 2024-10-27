@@ -35,3 +35,21 @@ Step 3 took me some time as I was able to essentially reuse the initial if loop 
 
 Silly enough, the issue I had was that I was not placing the correct syntax. When I intended to create something that was == to the value being entered, I instead was using the assignment = value. Thus every time an input was entered, it would always return rock which was the first result in the function. 
 
+
+
+Old function to request input from user using numbers, does not meet requirements for project, deprecated but storing here for personal reference moving forward
+
+// Current function works on number input, changing to text input with case insensitivity
+// function getHumanChoice() {
+//     let userInput = prompt("Please choose one of the following: 1) rock, 2) paper, 3) scissors");
+//     if (userInput == 1) {
+//         userResult = 'User entry: rock';
+//     }   else if (userInput == 2) {
+//         userResult = 'User entry: paper';
+//     }   else if (userInput == 3) {
+//         userResult = 'User entry: scissors';
+//     }   else {
+//         userResult = "-- Error: User input invalid response, please try again.";
+//     }
+//     return userResult;
+// }

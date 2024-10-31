@@ -53,3 +53,27 @@ Old function to request input from user using numbers, does not meet requirement
 //     }
 //     return userResult;
 // }
+
+// console.log(computerChoice);
+
+// Step 3: Write a function logic to get the player choice
+
+// function getHumanChoice() {
+//     // adding toLowerCase to the if condition, previous attempts was adding it to prompt directly to the prompt dialogue and on the return case
+//     let humanChoice = prompt("Please enter rock, paper, or scissors to begin the game.");
+//     // let userInput = prompt("Please enter rock, paper, or scissors to begin");
+//     if (humanChoice.toLowerCase() == 'rock') {
+//         humanChoice = 'User entered: rock';
+//     }
+//     else if (humanChoice.toLowerCase() == 'paper') {
+//         humanChoice = 'User entered: paper';
+//     }
+//     else if (humanChoice.toLowerCase() == 'scissors') {
+//         humanChoice = 'User entered: scissors';
+//     }
+//     else {
+//         humanChoice = '-- User entered an invalid result, please restart and try again.'
+//     }
+
+//     return humanChoice;
+// }

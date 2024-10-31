@@ -22,30 +22,7 @@ function getComputerChoice() {
     return computerChoice;
 }   
 
-// console.log(computerChoice);
-
-// Step 3: Write a function logic to get the player choice
-
-// function getHumanChoice() {
-//     // adding toLowerCase to the if condition, previous attempts was adding it to prompt directly to the prompt dialogue and on the return case
-//     let humanChoice = prompt("Please enter rock, paper, or scissors to begin the game.");
-//     // let userInput = prompt("Please enter rock, paper, or scissors to begin");
-//     if (humanChoice.toLowerCase() == 'rock') {
-//         humanChoice = 'User entered: rock';
-//     }
-//     else if (humanChoice.toLowerCase() == 'paper') {
-//         humanChoice = 'User entered: paper';
-//     }
-//     else if (humanChoice.toLowerCase() == 'scissors') {
-//         humanChoice = 'User entered: scissors';
-//     }
-//     else {
-//         humanChoice = '-- User entered an invalid result, please restart and try again.'
-//     }
-
-//     return humanChoice;
-// }
-
+// Step 3: Create function to request and input user choce
 function getHumanChoice() {
     const humanChoice = prompt("Please enter a choice: rock, paper, scissors");
     // using || to create or statements
@@ -61,20 +38,20 @@ function getHumanChoice() {
 // Step 4: Declare the players score variables
 // getHumanChoice() rewritten to accept text input instead of a number
 
-let humanScore = 0;
-let computerScore = 0;
+// let humanScore = 0;
+// let computerScore = 0;
 
 
 
 // Step 5: Write the logic to play a single round
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
 
 function playRound(humanChoice, computerChoice) {
-    for (let i = 0; i < 5; i++) {
-        if (humanSelection === computerSelection) {
+        if (humanChoice === computerChoice) {
             console.log("Tied");
+            return "tie";
         }
         // The following statements check if one of the 3 criteria are met, if not, then the final else statement is invoked.  The || symbols mean "or".
         else if (
@@ -83,19 +60,50 @@ function playRound(humanChoice, computerChoice) {
         (humanChoice === "paper" && computerChoice === "rock")
         ) {
             console.log(`User wins! ${humanChoice} beats ${computerChoice}.`);
+            return "player";
         }
         else {
             console.log(`User loses! ${computerChoice} beats ${humanChoice}.`);
+            return "computer";
         }
-    }
-    return computerScore;
-    return humanScore;
-
+    
 }
 
-playRound(humanSelection, computerSelection);
-// console.log("Computer chose:", getComputerChoice(), "\n", "Computer score: ", computerScore, "\n", "Human chose:", getHumanChoice(), "\n", "Human score: ", humanScore);
-// creating the output results here
-// console.log(getComputerChoice(),"\n",getHumanChoice());
+// Step 6: rewrite the function to play until one reaches 5 points
+
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+  
+    while (playerScore < 5 && computerScore < 5) {
+    //   const userInput = prompt("Enter your choice (rock, paper, or scissors):");
+      const humanChoice = getHumanChoice();
+      
+      if (humanChoice === null) continue; // Skip invalid input and prompt again
+  
+      const computerChoice = getComputerChoice();
+      const result = playRound(humanChoice, computerChoice);
+  
+      // Update scores based on the round result
+      if (result === "player") {
+        playerScore++;
+      } else if (result === "computer") {
+        computerScore++;
+      }
+  
+      console.log(`Score - Player: ${playerScore}, Computer: ${computerScore}`);
+    }
+  
+    // Announce the final winner
+    if (playerScore === 5) {
+      console.log("Congratulations! You won the game!");
+    } else {
+      console.log("The computer wins the game. Better luck next time!");
+    }
+  }
+  
+  // Start the game
+  playGame();
+
 
 
